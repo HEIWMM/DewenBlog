@@ -9,6 +9,7 @@ import { Layout, Menu, Icon, Breadcrumb, Avatar, Input, message, BackTop } from 
 import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { recieveBlog, resetArticle, recieveSearchData } from './redux/actions'
+import Lifecount from './components/lifecount';
 const { Header, Content, Footer, Sider } = Layout;
 const { Search } = Input
 class App extends React.Component {
@@ -20,8 +21,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    var isbreak = window.innerWidth>991?0:1
     this.setState({
-      width: window.innerWidth
+      isbreak: isbreak
     })
     
     this.props.history.listen((e) => {
@@ -59,15 +61,30 @@ class App extends React.Component {
             breakpoint="lg"
             collapsedWidth="0"
             onBreakpoint={broken => {
-              console.log();
+              broken?this.setState({
+                isbreak: 1
+              }):
+              this.setState({
+                isbreak: 0
+              })
             }}
             onCollapse={(collapsed, type) => {
-              console.log();
+              console.log(collapsed, type);
+              if(type == 'clickTrigger'){
+                return 0;
+              }
+              collapsed?this.setState({
+                isbreak: 1
+              }):
+              this.setState({
+                isbreak: 0
+              })
             }}
             style={{
-              overflow: 'auto',
+              //overflow: 'auto',
               height: '100vh',
               position: 'fixed',
+              zIndex: 99,
               left: 0,
             }}
           >
@@ -81,20 +98,20 @@ class App extends React.Component {
             <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
               <Menu.Item key="1" onClick={() => this.props.history.replace('/')}>
                 <Icon type="user" />
-                <span className="nav-text">nav 1</span>
+                <span className="nav-text">主页</span>
               </Menu.Item>
-              <Menu.Item key="2">
+              <Menu.Item key="2" onClick={() => this.props.history.replace('/tools/lifecount')}>
                 <Icon type="video-camera" />
-                <span className="nav-text">nav 2</span>
+                <span className="nav-text">人生小格</span>
               </Menu.Item>
 
             </Menu>
           </Sider>
-          <Layout className='layout_b' style={this.state.width>991?{ marginLeft: 200 }:{}} ref='a'>
+          <Layout className='layout_b' style={!this.state.isbreak?{ marginLeft: 200 }:{}}>
             <BackTop>
             <Avatar className="gotop" size="large" src={require('./static/img/gotop.png')} />
             </BackTop>
-            <Header style={{ background: '#fff', padding: 0, textAlign: "center" }} >
+            <Header style={{  }} >
               <Avatar size="large" src={require('./static/img/timg.jpg')} />
               <b style={{marginLeft:'20px'}}>DewenBlog</b>
             </Header>
@@ -114,6 +131,7 @@ class App extends React.Component {
                   <Route path="/main" component={Main} />
                   <Route path="/article" component={Article} />
                   <Route path="/searchpage" component={Searchpage} />
+                  <Route path="/tools/lifecount" component={Lifecount} />
                   <Route component={Main} />
                 </Switch>
 

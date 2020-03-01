@@ -35,7 +35,6 @@ class Article extends React.Component {
     }
     render() {
         const time = this.dealdate()
-        console.log(this.props.article.content)
         if (this.props.article.content) {
             return (
                 <div>

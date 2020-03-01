@@ -3,12 +3,16 @@
   padding: 0;
 }
 body {
-  background-image: url(https://pic3.zhimg.com/80/v2-c8b428280477ad25033220db36879686_hd.jpg);
+  background-image: url(https://s2.ax1x.com/2020/03/01/3gepb8.jpg) !important;
   background-color: rgb(240, 242, 245);
-  background-size: cover;
+  background-size: cover !important;
 }
+
 p {
   margin: 0;
+}
+ul {
+  list-style: none;
 }
 .keyword {
   color: #faad14;
@@ -20,8 +24,8 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}//load加载状态组件样式
-.ant-skeleton{
+} //load加载状态组件样式
+.ant-skeleton {
   margin-top: 10px;
 }
 .ant-layout-sider-zero-width-trigger {
@@ -73,17 +77,23 @@ p {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 } /*轮播组件的样式*/
 .layout_b {
-  background-image: url(https://pic3.zhimg.com/80/v2-c8b428280477ad25033220db36879686_hd.jpg);
-
+  background-image: url(https://s2.ax1x.com/2020/03/01/3gepb8.jpg);
   background-size: cover;
-
   background-position: center 0;
 }
 //主内容布局框架的样式
 .ant-layout-header {
+  background: transparent;
+  padding: 0px;
+  text-align: center;
+
   color: transparent;
   text-shadow: 0 0 6px #f96, -1px -1px #fff, 1px -1px #444;
   font-size: 30px;
+}
+.ant-layout {
+  background-image: url(https://s2.ax1x.com/2020/03/01/3gepb8.jpg);
+  background-size: cover;
 }
 .ant-carousel .slick-slide h3 {
   color: #fff;
@@ -104,6 +114,130 @@ p {
 .gotop {
   transform: rotate(90deg);
   opacity: 0.5;
+}
+//计算的时间显示样式
+.pastime {
+}
+
+.pastime {
+  .ant-col-xs-8 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #2f3e4c;
+  }
+  small {
+    color: #c0c4cc;
+  }
+}
+//lifebox
+
+@media (max-width: 610px) {
+  .lifebox {
+    height: 25rem;
+    width: 25rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .lifebox {
+    height: 280px;
+    width: 280px;
+    max-height: 280px;
+  }
+  .lifebox {
+    .blocks {
+      margin: 2.25px;
+    }
+  }
+}
+
+.lifebox {
+  width: 31.25rem;
+  height: 31.25rem;
+  margin: 0 auto;
+  max-width: 100%;
+  font-size: 0;
+  overflow: hidden;
+}
+.lifebox {
+  .blocks {
+    display: inline-block;
+    width: calc(5% - 0.375rem);
+    height: calc(5% - 0.375rem);
+    margin: 0.1875rem;
+  }
+  .past {
+    background-color: #98c3b9;
+  }
+  .sleep {
+    background-color: #c1e8f9;
+  }
+  .work {
+    background-color: #ab9f93;
+  }
+  .retired {
+    background-color: #f8c039;
+  }
+  .child {
+    background-color: #e3a6ab;
+  }
+  .parents {
+    background-color: #7ea1b7;
+  }
+  .surplus {
+    background-color: #e2e2e2;
+  }
+}
+//discrible是小格子的颜色
+.discribe {
+  .blockpast {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 12px;
+    background-color: #98c3b9;
+  }
+  .blocksleep {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 12px;
+    background-color: #c1e8f9;
+  }
+  .blockwork {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 12px;
+    background-color: #ab9f93;
+  }
+  .blockretired {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 12px;
+    background-color: #f8c039;
+  }
+  .blockchild {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 12px;
+    background-color: #e3a6ab;
+  }
+  .blockparents {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 12px;
+    background-color: #7ea1b7;
+  }
+  .blocksurplus {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 12px;
+    background-color: #e2e2e2;
+  }
 }
 //css动画效果
 @keyframes fade-in {
